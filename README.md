@@ -1,9 +1,7 @@
 ## VimFootnotes for Markdown
 
-[![Vint](https://github.com/vim-pandoc/vim-markdownfootnotes/workflows/Vint/badge.svg)](https://github.com/vim-pandoc/vim-markdownfootnotes/actions?workflow=Vint)
-
-This fork is a slight tweak of the venerable [vimfootnotes][], for use
-with extended markdown.
+Based on a slight tweak of the venerable [vimfootnotes][], for use
+with extended markdown. This is a personal fork.
 
 The new script inserts footnotes in the widely supported extended markdown
 syntax:
