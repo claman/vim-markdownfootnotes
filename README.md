@@ -31,8 +31,6 @@ of the file. A new buffer will open in a split window at the bottom of
 your screen, ready to edit the new footnote. When you are done, type
 `<Leader>r` to close the split and return to the main text.
 
-![Screenshot][5]
-
 ## Installation
 
 Extract to your plugins directory or use any common vim plugin manager.

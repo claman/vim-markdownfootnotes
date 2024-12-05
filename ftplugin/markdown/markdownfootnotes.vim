@@ -1,7 +1,6 @@
 " Maintainer: David Sanson <dsanson@gmail.com>
 " Description: Extended Markdown Footnotes in Vim
 " Version: 1.0
-" URL: https://github.com/vim-pandoc/vim-markdownfootnotes
 "
 " I've taken the original and modified the output to fit the widely
 " supported extended markdown format for footnotes.[^note]
@@ -15,9 +14,9 @@
 "
 " Based On:
 "   VimFootnotes
-"   Author:	Mikolaj Machowski <mikmach@wp.pl>
-"   Version:	0.6
-"   Description:	Footnotes in Vim
+"   Author:    Mikolaj Machowski <mikmach@wp.pl>
+"   Version:    0.6
+"   Description:    Footnotes in Vim
 "   Installation: See below
 "   Last Change: pon wrz 30 09:00  2002 C
 "   URL: http://www.vim.org/scripts/script.php?script_id=431
@@ -68,21 +67,21 @@
 "
 " FootnoteMeta
 "  ~  Change type of the footnotes and restart counter (1, a, A, i, I, *)
-" 	  :FootnoteMeta
-" 		If your previous footnote type was alpha, Alpha, roman, Roman or star
-" 		new type will be arabic.
-" 		If your previous footnote type was arabic new type will be alpha.
-" 	  :FootnoteMeta name_of_the_type
-" 		Change footnote type to name_of_the_type. If name_of_the_type is the
-" 		same as	your current footnote type nothing would be changed.
-" 		You can change your default type of footnote before inserting first
-" 		footnote.
+"       :FootnoteMeta
+"         If your previous footnote type was alpha, Alpha, roman, Roman or star
+"         new type will be arabic.
+"         If your previous footnote type was arabic new type will be alpha.
+"       :FootnoteMeta name_of_the_type
+"         Change footnote type to name_of_the_type. If name_of_the_type is the
+"         same as    your current footnote type nothing would be changed.
+"         You can change your default type of footnote before inserting first
+"         footnote.
 "
 " FootnoteRestore
 "  ~  Restore previous footnote type and counter. Unfortunately there is no easy
-" 	  way to sort footnotes at the end of file without handmade :!sort on marked
-" 	  lines (it doesn't work for 'star' type).
-" 	  :FootnoteRestore
+"       way to sort footnotes at the end of file without handmade :!sort on marked
+"       lines (it doesn't work for 'star' type).
+"       :FootnoteRestore
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -93,20 +92,20 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 if !exists('g:vimfootnotetype')
-	let g:vimfootnotetype = 'arabic'
+    let g:vimfootnotetype = 'arabic'
 endif
 
 if !exists('g:vimfootnotenumber')
-	let g:vimfootnotenumber = 0
+    let g:vimfootnotenumber = 0
 endif
 
 if !exists('g:vimfootnotelinebreak')
-	let g:vimfootnotelinebreak = 1
+    let g:vimfootnotelinebreak = 1
 endif
 
 " Mappings
 if !hasmapto('<Plug>AddVimFootnote', 'i') && mapcheck('<Leader>f', 'i') is# ''
-	imap <buffer> <Leader>f <Plug>AddVimFootnote
+    imap <buffer> <Leader>f <Plug>AddVimFootnote
 endif
 if !hasmapto('<Plug>AddVimFootnote', 'n') && mapcheck('<Leader>f', 'n') is# ''
     nmap <buffer> <Leader>f <Plug>AddVimFootnote
@@ -119,8 +118,8 @@ if !hasmapto('<Plug>ReturnFromFootnote', 'n') && mapcheck('<Leader>r', 'n') is# 
     nmap <buffer> <Leader>r <Plug>ReturnFromFootnote
 endif
 
-nnoremap <buffer> <Plug>AddVimFootnote :<C-U>call markdownfootnotes#VimFootnotes('a')<CR>      
-inoremap <buffer> <Plug>AddVimFootnote <C-O>:<C-U>call markdownfootnotes#VimFootnotes('a')<CR> 
+nnoremap <buffer> <Plug>AddVimFootnote :<C-U>call markdownfootnotes#VimFootnotes('a')<CR>
+inoremap <buffer> <Plug>AddVimFootnote <C-O>:<C-U>call markdownfootnotes#VimFootnotes('a')<CR>
 
 inoremap <Plug>ReturnFromFootnote <C-O>:<c-u>q<CR><Right>
 nnoremap <Plug>ReturnFromFootnote :<c-u>q<CR><Right>
