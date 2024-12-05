@@ -1,10 +1,8 @@
 ## VimFootnotes for Markdown
 
-Based on a slight tweak of the venerable [vimfootnotes][], for use
-with extended markdown. This is a personal fork.
+This is a fork of `vim-pandoc/vim-markdownfootnotes`, incorporating patches from `dmoerner/vim-markdownfootnotes` and a few of my own personal patches.
 
-The new script inserts footnotes in the widely supported extended markdown
-syntax:
+The new script inserts footnotes in the widely supported extended markdown syntax:
 
 ```markdown
 Here is some text.[^1]
@@ -18,18 +16,15 @@ and all other settings provided by `b:vimfootnotetype`. The automatic counter
 code is based on the code for the counting of HTML footnotes in [this post by
 Nick Coleman][3], adjusted slightly to work with Markdown footnotes.
 
-The script defines two mappings,
+The script defines three mappings:
 
 ```viml
 <Leader>f " Insert a new footnote
+<Leader>e " Edit existing footnote
 <Leader>r " Return from footnote
 ```
 
-To insert a footnote, type `<Leader>f`. A footnote mark will be inserted
-after the cursor. A matching footnote mark will be inserted at the end
-of the file. A new buffer will open in a split window at the bottom of
-your screen, ready to edit the new footnote. When you are done, type
-`<Leader>r` to close the split and return to the main text.
+To insert a footnote, type `<Leader>f`. A footnote mark will be inserted after the cursor. A matching footnote mark will be inserted at the end of the file. A new buffer will open in a split window at the bottom of your screen, ready to edit the new footnote. To edit an existing footnote, type `<Leader>e`, and a new buffer will open in a split window to edit the closest footnote. When you are done with either action, type `<Leader>r` to close the split and return to the main text.
 
 ## Installation
 
@@ -47,11 +42,6 @@ Plugin 'vim-pandoc/vim-markdownfootnotes'
 # pathogen
 $ cd ~/.vim/bundle
 $ git clone https://github.com/vim-pandoc/vim-markdownfootnotes.git
-```
-
-```lua
--- packer
-use("vim-pandoc/vim-markdownfootnotes")
 ```
 
 ## Settings

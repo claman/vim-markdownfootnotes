@@ -160,3 +160,29 @@ function! markdownfootnotes#VimFootnotes(appendcmd) abort
     " enter insert mode, as if `A` had been pressed
     startinsert!
 endfunction
+
+function! markdownfootnotes#VimEditFootnote()
+    " Define search pattern for footnote definitions
+    let l:footnotepattern = '\v\[\^[0-9]+\]'
+    let l:flags = 'cW'
+
+    " Find the next footnote and align it for return
+    let [l:footnoteline, l:footnotepos] = searchpos(l:footnotepattern, l:flags)
+
+        if l:footnoteline == 0
+            echom "No more footnotes in document."
+            return
+        endif
+
+        " Make sure we aren't aligned inside footnote when we return
+        normal h
+    " Get next footnote in a variable. Need to move back outside footnote to find it.
+    let l:text = getline(l:footnoteline)
+    let [l:footnotenumber, l:startpos, l:endpos] = matchstrpos(l:text, l:footnotepattern, l:footnotepos - 1)
+
+    " Move to the correct footnote and align at the start
+    :below 4split
+    call search('\V' . l:footnotenumber . ': ', 'W')
+    normal f:2l
+
+endfunction
