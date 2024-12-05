@@ -157,5 +157,6 @@ function! markdownfootnotes#VimFootnotes(appendcmd) abort
     :below 4split
     normal! G
     exe "normal! o\<cr>[^".g:vimfootnotemark.']: '
+    " enter insert mode, as if `A` had been pressed
     startinsert!
 endfunction
