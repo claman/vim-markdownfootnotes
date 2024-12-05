@@ -119,8 +119,8 @@ if !hasmapto('<Plug>ReturnFromFootnote', 'n') && mapcheck('<Leader>r', 'n') is# 
     nmap <buffer> <Leader>r <Plug>ReturnFromFootnote
 endif
 
-nnoremap <buffer> <Plug>AddVimFootnote :<c-u>call markdownfootnotes#VimFootnotes('a')<CR>
-inoremap <buffer> <Plug>AddVimFootnote <C-O>:<c-u>call markdownfootnotes#VimFootnotes('a')<CR>
+nnoremap <buffer> <Plug>AddVimFootnote :<C-U>call markdownfootnotes#VimFootnotes('i')<CR>      
+inoremap <buffer> <Plug>AddVimFootnote <C-O>:<C-U>call markdownfootnotes#VimFootnotes('i')<CR> 
 
 inoremap <Plug>ReturnFromFootnote <C-O>:<c-u>q<CR><Right>
 nnoremap <Plug>ReturnFromFootnote :<c-u>q<CR><Right>
