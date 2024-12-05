@@ -116,7 +116,7 @@ if !hasmapto('<Plug>EditVimFootnote', 'i') && mapcheck('<Leader>e', 'i') is# ''
     imap <buffer> <Leader>e <Plug>EditVimFootnote
 endif
 if !hasmapto('<Plug>EditVimFootnote', 'n') && mapcheck('<Leader>e', 'n') is# ''
-    imap <buffer> <Leader>e <Plug>EditVimFootnote
+    nmap <buffer> <Leader>e <Plug>EditVimFootnote
 endif
 "" return
 if !hasmapto('<Plug>ReturnFromFootnote', 'i') && mapcheck('<Leader>r', 'i') is# ''
