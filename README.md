@@ -1,6 +1,6 @@
 ## VimFootnotes for Markdown
 
-This is a fork of `vim-pandoc/vim-markdownfootnotes`, incorporating patches from `dmoerner/vim-markdownfootnotes` and a few of my own personal patches.
+This is a fork of `vim-pandoc/vim-markdownfootnotes`, incorporating patches from `dmoerner/vim-markdownfootnotes` and a few of my own personal additions.
 
 The new script inserts footnotes in the widely supported extended markdown syntax:
 
