@@ -46,53 +46,15 @@ $ git clone https://github.com/vim-pandoc/vim-markdownfootnotes.git
 
 ## Settings
 
-By default, footnote ids are arabic numerals. You can change this by
-setting `b:vimfootnotetype`:
-
-+	`arabic`: 1, 2, 3...
-+	`alpha`:  a, b, c, aa, bb..., zz, a...
-+   `Alpha`:  A, B, C, AA, BB..., ZZ, A...
-+   `roman`:  i, ii, iii... (displayed properly up to 89)
-+   `Roman`:  I, II, III...
-+   `star`:   \*, \*\*, \*\*\*...
-
-You can optionally disable line breaks before each footnote by setting `g:vimfootnotelinebreak = 0`.
+None at the moment. Uses exclusively Arabic numerals (1,2, 3, etc.).
 
 ## Commands
 
-`AddVimFootnote`
- :  inserts footnotemark at cursor location, inserts footnotemark on new
-    line at end of file, opens a split window all ready for you to enter in
-    the footnote.
+`FootnoteAdd`: inserts footnote after closest punctuation mark, adds corresponding
+mark at end of file, and opens split window at mark
 
-`ReturnFromFootnote`
- :  closes the split window and returns to the text in proper place.
+`FootnoteEdit`: finds next footnote, opens split window for editing
 
-These are mapped to `<Leader>f` and `<Leader>r` respectively.
+`FootnoteReturn`: close split and return to inserted footnote
 
-`FootnoteNumber`
- :  Change the current footnote number (one obligatory argument)
-    :FootnoteNumber 5
-
-`FootnoteNumberRestore`
- :  Restore old footnote number
-
-`FootnoteUndo`
- :  Decrease footnote counter by 1
-
-`FootnoteMeta [<footnotetype>]`
- :  Change type of the footnotes and restart counter (1, a, A, i, I, *)
-
-The `<footnotetype>` argument is optional. If omitted, and your previous
-footnote type was not `arabic`, the new type will be `arabic`; if it was
-arabic, the new type will be `alpha`. If the new type is the same as the
-previous type, then the counter will not be restarted.
-
-
-`FootnoteRestore`
-  : Restore previous footnote type and counter.
-
-[1]: https://github.com/vim-pandoc/vim-markdownfootnotes/
-[2]: http://www.vim.org/scripts/script.php?script_id=431
-[3]: http://www.nickcoleman.org/blog/index.cgi?post=footnotevim%21201102211201%21programming
-[5]: https://raw.github.com/vim-pandoc/vim-markdownfootnotes/master/assets/footnotes.png
+`FootnoteNextNumber`: get next available footnote number

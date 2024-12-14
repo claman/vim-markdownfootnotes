@@ -27,8 +27,8 @@ if !hasmapto('<Plug>ReturnFromFootnote', 'n') && mapcheck('<Leader>r', 'n') is# 
     nmap <buffer> <Leader>r <Plug>ReturnFromFootnote
 endif
 
-nnoremap <buffer> <Plug>AddVimFootnote :<C-U>call markdownfootnotes#VimFootnotes('a')<CR>
-inoremap <buffer> <Plug>AddVimFootnote <C-O>:<C-U>call markdownfootnotes#VimFootnotes('a')<CR>
+nnoremap <buffer> <Plug>AddVimFootnote :<C-U>call markdownfootnotes#VimAddFootnote()<CR>
+inoremap <buffer> <Plug>AddVimFootnote <C-O>:<C-U>call markdownfootnotes#VimAddFootnote()<CR>
 
 nnoremap <buffer> <Plug>EditVimFootnote :<C-U>call markdownfootnotes#VimEditFootnote()<CR>
 inoremap <buffer> <Plug>EditVimFootnote <C-O>:<C-U>call markdownfootnotes#VimEditFootnote()<CR>
@@ -37,8 +37,9 @@ nnoremap <Plug>ReturnFromFootnote :<C-U>q<CR><Right>
 inoremap <Plug>ReturnFromFootnote <C-O>:<C-U>q<CR><Right>
 
 " :Footnote commands
-command! -buffer -nargs=0 FootnoteNextNumber call markdownfootnotes#GetNextNote()
 command! -buffer -nargs=0 FootnoteAdd call markdownfootnote#VimAddFootnote()
 command! -buffer -nargs=0 FootnoteEdit call markdownfootnote#VimEditFootnote()
+command! -buffer -nargs=0 FootnoteNextNumber call markdownfootnotes#GetNextNote()
+command! -buffer -nargs=0 FootnoteReturn call markdownfootnotes#
 
 let &cpo = s:cpo_save
