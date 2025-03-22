@@ -40,6 +40,6 @@ inoremap <Plug>ReturnFromFootnote <C-O>:<C-U>q<CR><Right>
 command! -buffer -nargs=0 FootnoteAdd call markdownfootnote#VimAddFootnote()
 command! -buffer -nargs=0 FootnoteEdit call markdownfootnote#VimEditFootnote()
 command! -buffer -nargs=0 FootnoteNextNumber call markdownfootnotes#GetNextNote()
-command! -buffer -nargs=0 FootnoteReturn call markdownfootnotes#
+command! -buffer -nargs=0 FootnoteReturn call markdownfootnotes#ReturnFromFootnote()
 
 let &cpo = s:cpo_save
